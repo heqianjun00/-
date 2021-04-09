@@ -156,12 +156,10 @@ router.beforeEach((to,from,next)=>{
       return next('/nofind')
     }
   }
- 
-  router.afterEach(() => {
-    NProgress.done()
-  })
-
   document.title = to.meta.title
   next()
+})
+router.afterEach(() => {
+  NProgress.done()
 })
 export default router
